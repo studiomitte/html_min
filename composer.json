@@ -20,7 +20,8 @@
         "GPL-2.0-or-later"
     ],
     "require": {
-        "typo3/cms-core": "^9 || ^10"
+        "typo3/cms-core": "^9 || ^10",
+        "voku/html-min": "^4"
     },
     "autoload": {
         "psr-4": {
