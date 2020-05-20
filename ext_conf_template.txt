@@ -1,0 +1,5 @@
+# cat=features/enable/1; type=boolean; label=Enable minification: Works if set
+enabled = 1
+
+# cat=features/enable/2; type=boolean; label=Output headercomment:If set, the header comment is still shown
+headerComment = 1

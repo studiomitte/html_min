@@ -1,0 +1,38 @@
+{
+    "name": "studiomitte/html-min",
+    "keywords": [
+        "TYPO3",
+        "extension",
+        "minimize",
+        "performance"
+    ],
+    "authors": [
+        {
+            "name": "Georg Ringer",
+            "role": "Developer",
+            "homepage": "https://studiomitte.com"
+        }
+    ],
+    "type": "typo3-cms-extension",
+    "description": "Minification of the HTML before outputting it",
+    "homepage": "https://studiomitte.com",
+    "license": [
+        "GPL-2.0-or-later"
+    ],
+    "require": {
+        "typo3/cms-core": "^9 || ^10"
+    },
+    "autoload": {
+        "psr-4": {
+            "StudioMitte\\HtmlMin\\": "Classes"
+        }
+    },
+    "replace": {
+        "typo3-ter/html-min": "self.version"
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "html_min"
+        }
+    }
+}
