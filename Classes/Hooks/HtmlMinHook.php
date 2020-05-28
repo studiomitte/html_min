@@ -25,7 +25,9 @@ class HtmlMinHook
         if ($this->configuration->enabled()) {
             /** @var TypoScriptFrontendController $parentObject */
             $parentObject = $params['pObj'];
-            $this->minimize($parentObject);
+            if (!$parentObject->no_cache && empty($parentObject->config['INTincScript'])) {
+                $this->minimize($parentObject);
+            }
         }
     }
 
@@ -37,9 +39,22 @@ class HtmlMinHook
 
         $headerComment = $frontendController->config['config']['headerComment'] ?? '';
         if ($headerComment && $this->configuration->headerComment()) {
-            $typo3Information = new Typo3Information();
-            $headerComment = '<!--' . $headerComment . $typo3Information->getInlineHeaderComment() . LF . '-->';
+            $headerComment = '<!--' . $headerComment . $this->getTypo3Information() . LF . '-->';
             $frontendController->content = str_replace('<title>', $headerComment . LF . '<title>', $frontendController->content);
         }
     }
+
+    protected function getTypo3Information(): string
+    {
+        if (class_exists(Typo3Information::class)) {
+            $typo3Information = new Typo3Information();
+            return $typo3Information->getInlineHeaderComment();
+        }
+
+        return '	This website is powered by TYPO3 - inspiring people to share!
+	TYPO3 is a free open source Content Management Framework initially created by Kasper Skaarhoj and licensed under GNU/GPL.
+	TYPO3 is copyright 1998-' . date('Y') . ' of Kasper Skaarhoj. Extensions are copyright of their respective owners.
+	Information and contribution at https://typo3.org/';
+    }
+
 }
