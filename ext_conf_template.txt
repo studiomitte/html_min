@@ -3,3 +3,6 @@ enabled = 1
 
 # cat=features/enable/2; type=boolean; label=Output headercomment:If set, the header comment is still shown
 headerComment = 1
+
+# cat=features/enable/3; type=boolean; label=Remove all comments:If set, all comments are stripped which might be useful for indexing
+removeComments = 0

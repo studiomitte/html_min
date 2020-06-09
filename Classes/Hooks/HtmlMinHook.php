@@ -34,7 +34,7 @@ class HtmlMinHook
     protected function minimize(TypoScriptFrontendController $frontendController): void
     {
         $htmlMin = new HtmlMin();
-
+        $htmlMin->doRemoveComments($this->configuration->removeComments());
         $frontendController->content = $htmlMin->minify($frontendController->content);
 
         $headerComment = $frontendController->config['config']['headerComment'] ?? '';

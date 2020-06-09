@@ -15,12 +15,15 @@ class Configuration
 
         $this->enabled = (bool)($configuration['enabled'] ?? true);
         $this->headerComment = (bool)($configuration['headerComment'] ?? true);
+        $this->removeComments = (bool)($configuration['removeComments'] ?? false);
     }
 
     /** @var bool */
     protected $enabled = true;
     /** @var bool */
     protected $headerComment = true;
+    /** @var bool */
+    protected $removeComments = false;
 
     public function enabled(): bool
     {
@@ -30,6 +33,14 @@ class Configuration
     public function headerComment(): bool
     {
         return $this->headerComment;
+    }
+
+    /**
+     * @return bool
+     */
+    public function removeComments(): bool
+    {
+        return $this->removeComments;
     }
 
 }
