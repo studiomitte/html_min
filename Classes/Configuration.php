@@ -14,20 +14,31 @@ class Configuration
         $configuration = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('html_min');
 
         $this->enabled = (bool)($configuration['enabled'] ?? true);
+        $this->allowedTypes = (string)($configuration['allowedTypes'] ?? '');
         $this->headerComment = (bool)($configuration['headerComment'] ?? true);
         $this->removeComments = (bool)($configuration['removeComments'] ?? false);
     }
 
     /** @var bool */
     protected $enabled = true;
+
+    /** @var string */
+    protected $allowedTypes = '0';
+
     /** @var bool */
     protected $headerComment = true;
+
     /** @var bool */
     protected $removeComments = false;
 
     public function enabled(): bool
     {
         return $this->enabled;
+    }
+
+    public function allowedTypes(): string
+    {
+        return $this->allowedTypes;
     }
 
     public function headerComment(): bool

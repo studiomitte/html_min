@@ -25,7 +25,8 @@ class HtmlMinHook
         if ($this->configuration->enabled()) {
             /** @var TypoScriptFrontendController $parentObject */
             $parentObject = $params['pObj'];
-            if (!$parentObject->no_cache && empty($parentObject->config['INTincScript'])) {
+            if (!$parentObject->no_cache && empty($parentObject->config['INTincScript'])
+                && GeneralUtility::inList($this->configuration->allowedTypes(), $parentObject->type)) {
                 $this->minimize($parentObject);
             }
         }
