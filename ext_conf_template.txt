@@ -9,3 +9,6 @@ headerComment = 1
 
 # cat=features/enable/3; type=boolean; label=Remove all comments:If set, all comments are stripped which might be useful for indexing
 removeComments = 0
+
+# cat=features/enable/4; type=boolean; label=Remove quotes:If set, quotes with single values will be removed. e.g. class="lall" => class=lall
+removeOmittedQuotes = 0
