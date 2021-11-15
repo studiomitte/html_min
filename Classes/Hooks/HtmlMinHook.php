@@ -40,7 +40,7 @@ class HtmlMinHook
         $frontendController->content = $htmlMin->minify($frontendController->content);
 
         $headerComment = $frontendController->config['config']['headerComment'] ?? '';
-        if ($headerComment && $this->configuration->headerComment()) {
+        if ($headerComment && $this->configuration->headerComment() && $this->configuration->removeComments()) {
             $headerComment = '<!--' . LF . '	' . $headerComment . LF . $this->getTypo3Information() . '-->';
             $frontendController->content = str_replace('<title>', $headerComment . LF . '<title>', $frontendController->content);
         }
