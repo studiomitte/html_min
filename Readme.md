@@ -17,6 +17,9 @@ The following settings can be defined in the *Install Tool > Settings*:
 - `enable`: Enable/Disable the usage of the extension
 - `headerComment`: If set, the header comment will be keep intact.
 
-# About StudioMitte
 
-This extension has been brought to you by [StudioMitte](https://studiomitte.com).
+## Credits
+
+This extension was created by Georg Ringer for [Studio Mitte, Linz](https://studiomitte.com).
+
+[Find more TYPO3 extensions we have developed](https://www.studiomitte.com/loesungen/typo3) that provide additional features for TYPO3 sites. 
