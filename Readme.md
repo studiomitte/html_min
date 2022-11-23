@@ -16,6 +16,9 @@ The following settings can be defined in the *Install Tool > Settings*:
 
 - `enable`: Enable/Disable the usage of the extension
 - `headerComment`: If set, the header comment will be keep intact.
+- `removeComments`: If set, all comments are stripped which might be useful for indexing
+- `removeOmittedQuotes`: If set, quotes with single values will be removed. e.g. class="lall" => class=lall
+- `removeOmittedHtmlTags`: If set, ommitted html tags will be removed e.g. <p>lall</p> => <p>lall
 
 
 ## Credits

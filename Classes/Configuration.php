@@ -18,6 +18,7 @@ class Configuration
         $this->headerComment = (bool)($configuration['headerComment'] ?? true);
         $this->removeComments = (bool)($configuration['removeComments'] ?? false);
         $this->removeOmittedQuotes = (bool)($configuration['removeOmittedQuotes'] ?? false);
+        $this->removeOmittedHtmlTags = (bool)($configuration['removeOmittedHtmlTags'] ?? false);
     }
 
     /** @var bool */
@@ -34,6 +35,9 @@ class Configuration
 
     /** @var bool */
     protected $removeOmittedQuotes = false;
+
+    /** @var bool */
+    protected $removeOmittedHtmlTags = false;
 
     public function enabled(): bool
     {
@@ -66,4 +70,11 @@ class Configuration
         return $this->removeOmittedQuotes;
     }
 
+    /**
+     * @return bool
+     */
+    public function removeOmittedHtmlTags(): bool
+    {
+        return $this->removeOmittedHtmlTags;
+    }
 }

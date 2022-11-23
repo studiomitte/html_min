@@ -12,3 +12,6 @@ removeComments = 0
 
 # cat=features/enable/4; type=boolean; label=Remove quotes:If set, quotes with single values will be removed. e.g. class="lall" => class=lall
 removeOmittedQuotes = 0
+
+# cat=features/enable/5; type=boolean; label=Remove omitted HTML Tags:If set, ommitted html tags will be removed e.g. <p>lall</p> => <p>lall
+removeOmittedHtmlTags = 0
