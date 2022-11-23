@@ -37,6 +37,7 @@ class HtmlMinHook
         $htmlMin = new HtmlMin();
         $htmlMin->doRemoveComments($this->configuration->removeComments());
         $htmlMin->doRemoveOmittedQuotes($this->configuration->removeOmittedQuotes());
+        $htmlMin->doRemoveOmittedHtmlTags($this->configuration->removeOmittedHtmlTags());
         $frontendController->content = $htmlMin->minify($frontendController->content);
 
         $headerComment = $frontendController->config['config']['headerComment'] ?? '';
